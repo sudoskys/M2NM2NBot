@@ -1,0 +1,9 @@
+[bot]
+master = 0
+botToken = '5'
+post_channel = -0
+allow_group = [-0]
+
+[proxy]
+status = false
+url = "http://127.0.0.1:7890"
