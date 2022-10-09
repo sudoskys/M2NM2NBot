@@ -7,7 +7,7 @@ from utils.Base import Tool
 
 
 def m_n(txt):
-    return Tool.convert(txt.replace("(", "{").replace(")", "}"))
+    return Tool.convert(txt.replace("{", "(").replace("}", ")"))
 
 
 def n_m(txt):
