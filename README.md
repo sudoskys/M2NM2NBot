@@ -28,6 +28,6 @@ nano Config/app.toml
 nohup python3 main.py > output.log 2>&1 &
 ```
 
-### 使用以下 MVC 框架
+### 应用以下 MVC 框架
 
 https://github.com/TelechaBot/BaseBot
