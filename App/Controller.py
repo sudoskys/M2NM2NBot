@@ -38,6 +38,10 @@ class BotRunner(object):
         async def handle_private_msg(message):
             await Event.private(bot, message, _config)
 
+        @bot.message_handler(commands='about', chat_types=['private'])
+        async def handle_private_msg(message):
+            await Event.About(bot, message, _config)
+
         @bot.message_handler(commands='mn', chat_types=['group', 'supergroup'])
         async def handle_private_msg(message):
             await Event.group_m_n(bot, message, _config)
