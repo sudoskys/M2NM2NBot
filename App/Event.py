@@ -3,19 +3,10 @@
 # @FileName: Event.py
 # @Software: PyCharm
 # @Github    ：sudoskys
-from utils.Base import Tool
 
+from utils import Converter
 
-def m_n(txt):
-    return Tool.convert(txt.replace("{", "(").replace("}", ")"))
-
-
-def n_m(txt):
-    return Tool.convert(txt.replace("(", "{").replace(")", "}"))
-
-
-def n2_m(txt):
-    return Tool.convert(txt.replace("(", "{").replace(")", "}"))
+Cprompt = Converter.Create()
 
 
 async def group_n_m(bot, message, config):
@@ -23,11 +14,11 @@ async def group_n_m(bot, message, config):
     if msg:
         txt = msg.text
         if "(" in txt or ")" in txt:
-            result = n_m(txt)
+            result = Cprompt.n_m(txt)
             await bot.reply_to(message, f"`{result}`",
                                parse_mode='MarkdownV2')
         if "（" in txt or "）" in txt:
-            result = n2_m(txt)
+            result = Cprompt.n2_m(txt)
             await bot.reply_to(message, f"`{result}`",
                                parse_mode='MarkdownV2')
 
@@ -37,7 +28,7 @@ async def group_m_n(bot, message, config):
     if msg:
         txt = msg.text
         if "{" in txt or "}" in txt:
-            result = m_n(txt)
+            result = Cprompt.m_n(txt)
             await bot.reply_to(message, f"`{result}`",
                                parse_mode='MarkdownV2')
 
@@ -45,15 +36,15 @@ async def group_m_n(bot, message, config):
 async def private(bot, message, config):
     txt = message.text
     if "{" in txt or "}" in txt:
-        result = m_n(txt)
+        result = Cprompt.m_n(txt)
         await bot.reply_to(message, f"`{result}`",
                            parse_mode='MarkdownV2')
     if "(" in txt or ")" in txt:
-        result = n_m(txt)
+        result = Cprompt.n_m(txt)
         await bot.reply_to(message, f"`{result}`",
                            parse_mode='MarkdownV2')
     if "（" in txt or "）" in txt:
-        result = n2_m(txt)
+        result = Cprompt.n2_m(txt)
         await bot.reply_to(message, f"`{result}`",
                            parse_mode='MarkdownV2')
 

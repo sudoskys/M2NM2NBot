@@ -1,3 +1,5 @@
+
+
 # M2NM2NBot
 
 （）和 {} 的互转！
@@ -27,6 +29,7 @@ nano Config/app.toml
 #run
 nohup python3 main.py > output.log 2>&1 &
 ```
+
 
 ### 应用以下 MVC 框架
 
