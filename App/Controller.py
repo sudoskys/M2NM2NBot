@@ -34,20 +34,20 @@ class BotRunner(object):
             print("正在使用隧道！")
 
         # 私聊事件捕获
-        @bot.message_handler(content_types=['text'], chat_types=['private'])
-        async def handle_private_msg(message):
-            await Event.private(bot, message, _config)
-
         @bot.message_handler(commands='about', chat_types=['private'])
         async def handle_about_msg(message):
             await Event.About(bot, message, _config)
 
-        @bot.message_handler(commands='mn', chat_types=['group', 'supergroup'])
+        @bot.message_handler(content_types=['text'], chat_types=['private'])
         async def handle_private_msg(message):
+            await Event.private(bot, message, _config)
+
+        @bot.message_handler(commands='mn', chat_types=['group', 'supergroup'])
+        async def handle_groups_msg(message):
             await Event.group_m_n(bot, message, _config)
 
         @bot.message_handler(commands='nm', chat_types=['group', 'supergroup'])
-        async def handle_private_msg(message):
+        async def handle_groupe_msg(message):
             await Event.group_n_m(bot, message, _config)
 
         from telebot import asyncio_filters

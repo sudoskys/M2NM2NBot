@@ -51,5 +51,4 @@ async def private(bot, message, config):
 
 async def About(bot, message, config):
     await bot.reply_to(message,
-                       "基于 https://github.com/TelechaBot/BaseBot MVC框架快速开发\n开源于 https://github.com/sudoskys/M2NM2NBot",
-                       parse_mode='MarkdownV2')
+                       "基于 https://github.com/TelechaBot/BaseBot MVC框架快速开发\n开源于 https://github.com/sudoskys/M2NM2NBot")
