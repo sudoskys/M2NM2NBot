@@ -10,7 +10,7 @@ data0 = """
 ((((masterpiece)))),((((((((((((sex)))))))))))),sexy body,thick_thighs,ahegao/fucked_silly,nude,((((cum in pussy)))),pink pussy,pink nipple,penis,nsfw, sexually suggestive,heart-shaped_pupils,((leg apart)),high resolution, high quality, HQ,1girl,extremely,detailed,CG,unity,8k,wallpaper
 """
 data = """
-(masterpiece),((((((sex)))))),(sexy\(bot\):4.8),(girl:8),ahegao/fucked_silly,(bot:)
+(masterpiece),((((((sex)))))),(sexy\(bot\):2.8),(girl:2),ahegao/fucked_silly,(bot:)
 """
 test3 = "{masterpiece},{{{{{{{{{{{{{{{{{{{{{{{{{sex}}}}}}}}}}}}}}}}}}}}}}}}}"
 
