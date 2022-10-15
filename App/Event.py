@@ -15,11 +15,11 @@ async def group_n_m(bot, message, config):
         txt = msg.text
         if "(" in txt or ")" in txt:
             result = Cprompt.n_m(txt)
-            await bot.reply_to(message, f"`{result}`",
+            await bot.reply_to(message, f"`{result}`\n\n圆转花",
                                parse_mode='MarkdownV2')
         if "（" in txt or "）" in txt:
             result = Cprompt.n2_m(txt)
-            await bot.reply_to(message, f"`{result}`",
+            await bot.reply_to(message, f"`{result}`\n\n含中文圆括号",
                                parse_mode='MarkdownV2')
 
 
@@ -29,7 +29,7 @@ async def group_m_n(bot, message, config):
         txt = msg.text
         if "{" in txt or "}" in txt:
             result = Cprompt.m_n(txt)
-            await bot.reply_to(message, f"`{result}`",
+            await bot.reply_to(message, f"`{result}`\n\n花转圆",
                                parse_mode='MarkdownV2')
 
 
@@ -37,15 +37,15 @@ async def private(bot, message, config):
     txt = message.text
     if "{" in txt or "}" in txt:
         result = Cprompt.m_n(txt)
-        await bot.reply_to(message, f"`{result}`",
+        await bot.reply_to(message, f"`{result}`\n\n花转圆",
                            parse_mode='MarkdownV2')
     if "(" in txt or ")" in txt:
         result = Cprompt.n_m(txt)
-        await bot.reply_to(message, f"`{result}`",
+        await bot.reply_to(message, f"`{result}`\n\n圆转花",
                            parse_mode='MarkdownV2')
     if "（" in txt or "）" in txt:
         result = Cprompt.n2_m(txt)
-        await bot.reply_to(message, f"`{result}`",
+        await bot.reply_to(message, f"`{result}`\n\n含中文圆括号",
                            parse_mode='MarkdownV2')
 
 

@@ -13,6 +13,7 @@
 
 ### 部署
 
+
 ```bash
 cd M2NM2NBot
 
@@ -30,6 +31,11 @@ nano Config/app.toml
 nohup python3 main.py > output.log 2>&1 &
 ```
 
+### 查看
+
+```bash
+ps -aux|grep python3
+```
 
 ### 应用以下 MVC 框架
 
