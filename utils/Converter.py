@@ -66,7 +66,7 @@ class Create(object):
                 # 符合{}的效果就处理
                 if _start in _target and _end in _target:
                     # 先计算权重
-                    _Weights = round(pow(1.1, item.count("{")), 1)
+                    _Weights = round(pow(1.1, item.count("{")), 2)
                     # 削除指定的符号
                     item = self.del_smb(text=item, target=_target)
                     item = f"({item}:{_Weights})"
@@ -87,7 +87,7 @@ class Create(object):
                 if ":" in item:
                     _Weight = ''.join(list(filter(lambda ch: ch in '0123456789.', item)))
                     item = item.replace(_Weight, "").replace(":", "")
-                    _Weights = (int(float(_Weight.strip())))
+                    _Weights = math.ceil(math.log(float(_Weight.strip()), 1.1))
                     # item = self.del_smb(text=item, target=_target)
                 else:
                     # 符合{}的效果就处理

@@ -6,14 +6,46 @@
 
 from utils import Converter
 
-test = """
+data = """
 ((((masterpiece)))),((((((((((((sex)))))))))))),sexy body,thick_thighs,ahegao/fucked_silly,nude,((((cum in pussy)))),pink pussy,pink nipple,penis,nsfw, sexually suggestive,heart-shaped_pupils,((leg apart)),high resolution, high quality, HQ,1girl,extremely,detailed,CG,unity,8k,wallpaper
 """
-test2 = """
+data = """
 (masterpiece),((((((((((((((((((((((((sex)))))))))))))))))))))))),(sexy:10.8),(girl:8),ahegao/fucked_silly
 """
 test3 = "{masterpiece},{{{{{{{{{{{{{{{{{{{{{{{{{sex}}}}}}}}}}}}}}}}}}}}}}}}}"
+
+test4="{masterpiece},{{{{{{{{{{{{sex}}}}}}}}}}}},{{{{{{{{{{sexy}}}}}}}}}},{{{{{{{{girl}}}}}}}},ahegao/fucked_silly"
 Cprompt = Converter.Create()
-data = Cprompt.n_m(test2)
-# data = Cprompt.m_n(test3)
+data = Cprompt.n_m(data)
 print(data)
+print("---------")
+data = Cprompt.m_n(data)
+print(data)
+print("---------")
+data = Cprompt.n_m(data)
+print(data)
+print("---------")
+data = Cprompt.m_n(data)
+print(data)
+print("---------")
+data = Cprompt.n_m(data)
+print(data)
+print("---------")
+data = Cprompt.m_n(data)
+print(data)
+print("---------")
+data = Cprompt.n_m(data)
+print(data)
+print("---------")
+data = Cprompt.m_n(data)
+print(data)
+print("---------")
+data = Cprompt.n_m(data)
+print(data)
+print("---------")
+data = Cprompt.m_n(data)
+print(data)
+print("---------")
+data = Cprompt.n_m(data)
+print(data)
+print("---------")
