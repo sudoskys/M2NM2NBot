@@ -50,8 +50,11 @@ class Create(object):
         return ",".join(_deal_after)
 
     def del_smb(self, text, target):
-        return text.translate(str.maketrans(target,
+        text = text.replace(r"\(", r"酢").replace(r"\)", r"铕")
+        text = text.translate(str.maketrans(target,
                                             self.crateNumText(txt="適", num=len(target)))).replace("適", "")
+        text = text.replace(r"酢", r"\(").replace(r"铕", r"\)")
+        return text
 
     def __mn(self, text):
         _list = text.split(",") if text.split(",") else []
@@ -87,13 +90,14 @@ class Create(object):
                 if ":" in item:
                     _Weight = ''.join(list(filter(lambda ch: ch in '0123456789.', item)))
                     item = item.replace(_Weight, "").replace(":", "")
-                    _Weights = math.ceil(math.log(float(_Weight.strip()), 1.1))
+                    if _Weight:
+                        _Weights = math.ceil(math.log(float(_Weight.strip()), 1.1))
                     # item = self.del_smb(text=item, target=_target)
                 else:
                     # 符合{}的效果就处理
                     if _start in _target and _end in _target:
                         # 先计算权重
-                        _Weights = round(math.log(pow(1.05, item.count("(")), 1.1))
+                        _Weights = math.ceil(math.log(pow(1.05, item.count("(")), 1.1))
                         # 削除指定的符号
                 item = self.del_smb(text=item, target=_target)
                 item = f"{item}"

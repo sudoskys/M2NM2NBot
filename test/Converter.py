@@ -6,11 +6,11 @@
 
 from utils import Converter
 
-data = """
+data0 = """
 ((((masterpiece)))),((((((((((((sex)))))))))))),sexy body,thick_thighs,ahegao/fucked_silly,nude,((((cum in pussy)))),pink pussy,pink nipple,penis,nsfw, sexually suggestive,heart-shaped_pupils,((leg apart)),high resolution, high quality, HQ,1girl,extremely,detailed,CG,unity,8k,wallpaper
 """
 data = """
-(masterpiece),((((((((((((((((((((((((sex)))))))))))))))))))))))),(sexy:10.8),(girl:8),ahegao/fucked_silly
+(masterpiece),((((((sex)))))),(sexy\(bot\):4.8),(girl:8),ahegao/fucked_silly,(bot:)
 """
 test3 = "{masterpiece},{{{{{{{{{{{{{{{{{{{{{{{{{sex}}}}}}}}}}}}}}}}}}}}}}}}}"
 
