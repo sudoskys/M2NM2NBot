@@ -21,33 +21,38 @@ class Create(object):
         _text = strip.join([txt for i in range(int(num))])
         return _text
 
-    def calculate_promote(self, text: str, types="("):
-        _list = text.split(",") if text.split(",") else []
-        _target = '{}()'
-        _deal_after = []
-        for item in _list:
-            item = item.strip()
-            if len(item) >= 2:
-                _start = item[0]
-                _end = item[-1]
-                if types == "(":
-                    _Weights = (self.convert(weights=item.count("("), types=types))
-                    _item_start = self.crateNumText(txt="{", num=_Weights)
-                    _item_end = self.crateNumText(txt="}", num=_Weights)
+    @staticmethod
+    def split_words(text: str) -> list:
+        """
+        对数据进行分词。
+        自动寻找括号，然后取词
+        """
+        de_text = []
+        item = []
+        text = text.strip()
+        over = False
+        # 判定如果最后一个就清空并重新添加
+        for k, i in enumerate(text):
+            # 入栈
+            item.append(str(i))
+            # 出栈
+            if i in [")", "}", " ", ","]:
+                # 检查是否满足出栈标准
+                if k + 1 < len(text):
+                    # 检查是不是最后一个
+                    if text[k + 1] in [")", "}", ":"] or text[k + 1].isalpha() or text[k + 1].isdigit():
+                        # 如果下一位还有符号或者:,或者下一位是字符 (a(b)c)，就不出栈
+                        # print(item)
+                        over = False
+                    else:
+                        over = True
                 else:
-                    _Weights = (self.convert(weights=item.count("{"), types=types))
-                    _item_start = self.crateNumText(txt="(", num=_Weights)
-                    _item_end = self.crateNumText(txt=")", num=_Weights)
-                if _start in _target and _end in _target:
-                    item = item.translate(str.maketrans(_target,
-                                                        self.crateNumText(txt="@",
-                                                                          num=len(_target)))).replace("@", "")
-                if types == "(":
-                    item = f"({item}:{_Weights})"
-                else:
-                    item = f"{_item_start}{item}{_item_end}"
-                _deal_after.append(item)
-        return ",".join(_deal_after)
+                    over = True
+            if over:
+                de_text.append("".join(item).replace(",", ""))
+                item = []
+                over = False
+        return de_text
 
     def del_smb(self, text, target):
         text = text.replace(r"\(", r"酢").replace(r"\)", r"铕")
@@ -57,7 +62,8 @@ class Create(object):
         return text
 
     def __mn(self, text):
-        _list = text.split(",") if text.split(",") else []
+        _list = self.split_words(text)
+        # _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
@@ -77,7 +83,9 @@ class Create(object):
         return _deal_after
 
     def __nm(self, text):
-        _list = text.split(",") if text.split(",") else []
+        _list = self.split_words(text)
+        # print(_list)
+        # _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
