@@ -21,11 +21,11 @@ datat = """
 """
 
 test6="""
-(masterpiece:1.1),(sex:1.8),(sexybot:2.79),(girl:1.98),ahegao/fucked_sillybot,(somes:1.1),(blankyou:1.1),(somesaaa:1.22),(blankyou54256:1.1)
+(blue:1.05),dress
 """
 
 Cprompt = Converter.Create()
-_data = Cprompt.n_m(test6)
+_data = Cprompt.n_m(datat)
 print(_data)
 print("---------")
 

@@ -35,17 +35,15 @@ class Create(object):
                     # 检查是不是最后一个
                     if text[k + 1] in [")", "}", ":"] or text[k + 1].isalpha() or text[k + 1].isdigit():
                         # 如果下一位还有符号或者:,或者下一位是字符 (a(b)c)，就不出栈
-                        # print(item)
                         over = False
                     else:
                         over = True
-                else:
-                    over = True
+            if k + 1 == len(text):
+                over = True
             if over:
                 de_text.append("".join(item).replace(",", ""))
                 item = []
                 over = False
-        print(de_text)
         return de_text
 
     def del_smb(self, text, target):
