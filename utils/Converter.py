@@ -10,13 +10,6 @@ import math
 class Create(object):
 
     @staticmethod
-    def convert(weights, types):
-        if types == "(":
-            return
-        else:
-            return pow(1.05, weights)
-
-    @staticmethod
     def crateNumText(txt: str, num: int, strip: str = ""):
         _text = strip.join([txt for i in range(int(num))])
         return _text
@@ -52,6 +45,7 @@ class Create(object):
                 de_text.append("".join(item).replace(",", ""))
                 item = []
                 over = False
+        print(de_text)
         return de_text
 
     def del_smb(self, text, target):
@@ -96,7 +90,8 @@ class Create(object):
                 _start = item[0]
                 _end = item[-1]
                 if ":" in item:
-                    _Weight = ''.join(list(filter(lambda ch: ch in '0123456789.', item)))
+                    _Weight_pre = item.split(":")[1]
+                    _Weight = ''.join(list(filter(lambda ch: ch in '0123456789.', _Weight_pre)))
                     item = item.replace(_Weight, "").replace(":", "")
                     if _Weight:
                         _Weights = round(math.log(float(_Weight.strip()), 1.05))
