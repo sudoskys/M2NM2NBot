@@ -29,7 +29,7 @@ class Create(object):
             # 入栈
             item.append(str(i))
             # 出栈
-            if i in [")", "}", " ", ","]:
+            if i in [")", "}", ","]:
                 # 检查是否满足出栈标准
                 if k + 1 < len(text):
                     # 检查是不是最后一个
@@ -54,8 +54,8 @@ class Create(object):
         return text
 
     def __mn(self, text):
-        # _list = self.split_words(text)
-        _list = text.split(",") if text.split(",") else []
+        _list = self.split_words(text)
+        # _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
@@ -75,9 +75,9 @@ class Create(object):
         return _deal_after
 
     def __nm(self, text):
-        # _list = self.split_words(text)
+        _list = self.split_words(text)
         # print(_list)
-        _list = text.split(",") if text.split(",") else []
+        # _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
