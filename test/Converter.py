@@ -25,7 +25,7 @@ test6="""
 """
 
 Cprompt = Converter.Create()
-_data = Cprompt.n_m(datat)
+_data = Cprompt.m_n(test4)
 print(_data)
 print("---------")
 

@@ -33,7 +33,7 @@ class Create(object):
                 # 检查是否满足出栈标准
                 if k + 1 < len(text):
                     # 检查是不是最后一个
-                    if text[k + 1] in [")", "}", ":"] or text[k + 1].isalpha() or text[k + 1].isdigit():
+                    if text[k + 1] in [")", "}", ":"] or text[k + 1].isdigit():
                         # 如果下一位还有符号或者:,或者下一位是字符 (a(b)c)，就不出栈
                         over = False
                     else:
