@@ -54,8 +54,8 @@ class Create(object):
         return text
 
     def __mn(self, text):
-        _list = self.split_words(text)
-        # _list = text.split(",") if text.split(",") else []
+        # _list = self.split_words(text)
+        _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
@@ -75,9 +75,9 @@ class Create(object):
         return _deal_after
 
     def __nm(self, text):
-        _list = self.split_words(text)
+        # _list = self.split_words(text)
         # print(_list)
-        # _list = text.split(",") if text.split(",") else []
+        _list = text.split(",") if text.split(",") else []
         _deal_after = []
         _target = '{}()'
         for item in _list:
