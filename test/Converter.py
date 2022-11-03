@@ -17,15 +17,15 @@ test3 = "{masterpiece},{{{{{{{{{{{{{{{{{sex}}}}}}}}"
 test4 = "{masterpiece},{{{{{{{{{{{{sex}}}}}}}}}}}},{{{{{{{{{{sexy}}}}}}}}}},{{{{{{{{girl}}}}}}}},ahegao/fucked_silly"
 
 datat = """
-(masterpiece)((((((sex)))))) (sexy\(bot\):2.8) (girl:2) ahegao/fucked_silly (bot:) (somes) (blankyou) (somes(aaa)) (blankyou542)56)
+(masterpiece)((sex)),(sexy\(bot\):0.8),(girl:2),ahegao/fucked_silly,(bot:),(somes) (blankyou),(somes(aaa)),(blankyou542)56),
 """
 
-test6="""
+test6 = """
 (blue:1.05),dress
 """
 
 Cprompt = Converter.Create()
-_data = Cprompt.m_n(test4)
+_data = Cprompt.n_m(datat)
 print(_data)
 print("---------")
 
